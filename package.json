@@ -1,0 +1,27 @@
+{
+  "name": "@x-tech/touch",
+  "version": "1.0.0",
+  "description": "Quick file creation with templates",
+  "repository": "https://github.com/Xploration-Technologies/x-tech-touch.git",
+  "author": "Adrian (Grim) Roach <silencegrim@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc -p ./src/tsconfig.json",
+    "clean": "rimraf lib"
+  },
+  "main": "./lib/touch.js",
+  "bin": {
+    "tsc": "./bin/touch.js"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^0.0.43",
+    "@types/node": "^10.12.17",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "inquirer": "^6.2.1"
+  }
+}
