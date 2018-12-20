@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es6",
+    "noUnusedLocals": true,
+    "baseUrl": ".",
+    "outDir": "../lib",
+    "declaration": true
+  }
+}

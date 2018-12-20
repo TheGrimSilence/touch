@@ -1,0 +1,10 @@
+{
+  "name": "fusebox-typescript",
+  "version": "1.0.0",
+  "description": "Example Fusebox project",
+  "license": "MIT",
+  "scripts": {},
+  "main": "./out/fusebox-typescript",
+  "dependencies": {},
+  "devDependencies": {}
+}
