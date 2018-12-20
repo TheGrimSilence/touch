@@ -1,66 +1,11 @@
-import {
-  mkdirSync,
-  readdirSync,
-  readFileSync,
-  statSync,
-  writeFileSync,
-} from 'fs';
-import { prompt } from 'inquirer';
-import { join } from 'path';
+import * as chalk from 'chalk';
+import { writeFileSync } from 'fs';
+const args = process.argv.slice(2);
 
-const cwd = process.cwd();
+// TODO: Are we creating a file, running interactive, or creating a project?
 
-prompt([
-  {
-    name: 'template',
-    type: 'list',
-    message: 'Select a template',
-    choices: readdirSync(join(__dirname, '..', 'templates')),
-  },
-  {
-    name: 'name',
-    type: 'input',
-    message: 'The name of the new project?',
-    validate(input) {
-      if (/^([A-Za-z\-\_\d])+$/.test(input)) {
-        return true;
-      } else {
-        return 'Project name may only include letters, numbers, underscores and hashes.';
-      }
-    },
-  },
-]).then((answers) => {
-  const projectTemplate = answers['template'];
-  const projectName = answers['name'];
-  const templatePath = join(__dirname, '..', 'templates', projectTemplate);
+console.log(args);
 
-  mkdirSync(join(cwd, projectName));
-  mkDirSrc(templatePath, projectName);
-});
+console.log(chalk.default`{red Test}`);
 
-/**
- * Create a new project with given parameters.
- *
- * @export
- * @param {import('fs').PathLike} templatePath
- * @param {string} projectName
- */
-export function mkDirSrc(templatePath: string, projectName: string) {
-  const fileList = readdirSync(templatePath);
-
-  fileList.forEach((file) => {
-    const fileOrigin = `${templatePath}/${file}`;
-    const fileStats = statSync(fileOrigin);
-
-    if (fileStats.isFile()) {
-      const contents = readFileSync(fileOrigin, 'utf8');
-      const writePath = `${cwd}/${projectName}/${file}`;
-
-      writeFileSync(writePath, contents, 'utf8');
-    } else if (fileStats.isDirectory()) {
-      mkdirSync(join(cwd, projectName, file));
-
-      mkDirSrc(join(templatePath, file), join(projectName, file));
-    }
-  });
-}
+writeFileSync()
