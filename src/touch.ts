@@ -38,6 +38,13 @@ prompt([
   mkDirSrc(templatePath, projectName);
 });
 
+/**
+ * Create a new project with given parameters.
+ *
+ * @export
+ * @param {import('fs').PathLike} templatePath
+ * @param {string} projectName
+ */
 export function mkDirSrc(
   templatePath: import('fs').PathLike,
   projectName: string,
