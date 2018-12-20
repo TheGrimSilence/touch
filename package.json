@@ -23,6 +23,7 @@
     "typescript": "^3.2.2"
   },
   "dependencies": {
+    "chalk": "^2.4.1",
     "inquirer": "^6.2.1"
   }
 }
