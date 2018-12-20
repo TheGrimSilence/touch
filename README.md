@@ -26,6 +26,8 @@ For example, the following command would create _four_ new, empty files named `t
 xtouch tsconfig.json tslint.json index.ts package.json
 ```
 
+### Addons
+
 When used with options, xtouch creates new files and projects based on the parameters given to it. xtouch cannot create more than one type of project simultaneously. However, _should the need arise_, we will add it accordingly.
 
 When creating project files, xtouch needs very few parameters to get you started. For example, the following command would create a _[Fusebox](https://fuse-box.org)_-powered [React](https://reactjs.org) application.
@@ -33,5 +35,11 @@ When creating project files, xtouch needs very few parameters to get you started
 ```bash
 xtouch --addon fuse-box --type react
 ```
+
+### Interactive `alpha`
+
+When specifying the `--interactive` option, you'll be prompted with an interactive CLI for making your selections. This is only something we're playing around with, it may be buggy.
+
+## Note
 
 We're designing xtouch with modularity in mind. This means rather than simply creating a new project entirely, you can use xtouch to add files in a plugin-like way. Another features we're working on is resetting files. This way anything can be removed, reset, or added in a modular way, without you having to scroll through git commits for a good reset entry.
