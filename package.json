@@ -1,8 +1,8 @@
 {
-  "name": "@x-tech/touch",
+  "name": "@xploration-tech/touch",
   "version": "1.0.0",
   "description": "Quick file creation with templates",
-  "repository": "https://github.com/Xploration-Technologies/x-tech-touch.git",
+  "repository": "https://github.com/Xploration-Technologies/touch.git",
   "author": "Adrian (Grim) Roach <silencegrim@gmail.com>",
   "license": "MIT",
   "private": false,
