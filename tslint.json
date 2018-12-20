@@ -4,7 +4,7 @@
   "rules": {
     "newline-before-return": true,
     "quotemark": [true, "single", "jsx-double"],
-    "only-arrow-functions": true,
+    "only-arrow-functions": false,
     "no-console": false,
     "no-implicit-dependencies": [true, "dev"],
     "no-string-literal": false,
