@@ -9,5 +9,5 @@
     "declaration": true,
     "resolveJsonModule": true
   },
-  "files": ["touch.ts"]
+  "files": ["xtouch.ts"]
 }
