@@ -1,19 +1,21 @@
-import { readdirSync } from 'fs';
+import {
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  statSync,
+  writeFileSync,
+} from 'fs';
 import { prompt } from 'inquirer';
-// ! const args = process.argv.slice(2);
+import { join } from 'path';
 
-// ! const grab = (flag: string) => {
-// !   const index = process.argv.indexOf(flag);
-
-// !   return index === -1 ? null : process.argv[index + 1];
-// ! };
+const cwd = process.cwd();
 
 prompt([
   {
     name: 'template',
     type: 'list',
     message: 'Select a template',
-    choices: readdirSync(`${__dirname}/templates`),
+    choices: readdirSync(join(__dirname, '..', 'templates')),
   },
   {
     name: 'name',
@@ -28,5 +30,29 @@ prompt([
     },
   },
 ]).then((answers) => {
-  console.log(answers);
+  const projectTemplate = answers['template'];
+  const projectName = answers['name'];
+  const templatePath = join(__dirname, '..', 'templates', projectTemplate);
+
+  mkdirSync(`${cwd}/${projectName}`);
+  mkDirSrc(templatePath, projectName);
 });
+
+export function mkDirSrc(
+  templatePath: import('fs').PathLike,
+  projectName: string,
+) {
+  const fileList = readdirSync(templatePath);
+
+  fileList.forEach((file) => {
+    const fileOrigin = `${templatePath}/${file}`;
+    const fileStats = statSync(fileOrigin);
+
+    if (fileStats.isFile()) {
+      const contents = readFileSync(fileOrigin, 'utf8');
+      const writePath = `${cwd}/${projectName}/${file}`;
+
+      writeFileSync(writePath, contents, 'utf8');
+    }
+  });
+}
