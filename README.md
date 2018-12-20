@@ -35,5 +35,3 @@ xtouch --addon fuse-box --type react
 ```
 
 We're designing xtouch with modularity in mind. This means rather than simply creating a new project entirely, you can use xtouch to add files in a plugin-like way. Another features we're working on is resetting files. This way anything can be removed, reset, or added in a modular way, without you having to scroll through git commits for a good reset entry.
-
-Fix for 2.0
