@@ -34,7 +34,7 @@ prompt([
   const projectName = answers['name'];
   const templatePath = join(__dirname, '..', 'templates', projectTemplate);
 
-  mkdirSync(`${cwd}/${projectName}`);
+  mkdirSync(join(cwd, projectName));
   mkDirSrc(templatePath, projectName);
 });
 
@@ -45,10 +45,7 @@ prompt([
  * @param {import('fs').PathLike} templatePath
  * @param {string} projectName
  */
-export function mkDirSrc(
-  templatePath: import('fs').PathLike,
-  projectName: string,
-) {
+export function mkDirSrc(templatePath: string, projectName: string) {
   const fileList = readdirSync(templatePath);
 
   fileList.forEach((file) => {
@@ -60,6 +57,10 @@ export function mkDirSrc(
       const writePath = `${cwd}/${projectName}/${file}`;
 
       writeFileSync(writePath, contents, 'utf8');
+    } else if (fileStats.isDirectory()) {
+      mkdirSync(join(cwd, projectName, file));
+
+      mkDirSrc(join(templatePath, file), join(projectName, file));
     }
   });
 }
