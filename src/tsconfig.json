@@ -6,6 +6,8 @@
     "noUnusedLocals": true,
     "baseUrl": ".",
     "outDir": "../lib",
-    "declaration": true
-  }
+    "declaration": true,
+    "resolveJsonModule": true
+  },
+  "files": ["touch.ts"]
 }
