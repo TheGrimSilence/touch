@@ -6,7 +6,7 @@
     "quotemark": [true, "single", "jsx-double"],
     "only-arrow-functions": false,
     "no-console": false,
-    "no-implicit-dependencies": [true, "dev"],
+    "no-implicit-dependencies": [false, "dev"],
     "no-string-literal": false,
     "object-literal-sort-keys": false
   }
