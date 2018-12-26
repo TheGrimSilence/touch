@@ -26,7 +26,7 @@ For example, the following command would create _four_ new, empty files named `t
 xtouch tsconfig.json tslint.json index.ts package.json
 ```
 
-### Addons
+### Addons _Coming Soon\*_
 
 When used with options, xtouch creates new files and projects based on the parameters given to it. xtouch cannot create more than one type of project simultaneously. However, _should the need arise_, we will add it accordingly.
 
@@ -36,7 +36,7 @@ When creating project files, xtouch needs very few parameters to get you started
 xtouch --addon fuse-box --type react
 ```
 
-### Interactive `alpha`
+### Interactive `alpha` _Coming Soon\*_
 
 When specifying the `--interactive` option, you'll be prompted with an interactive CLI for making your selections. This is only something we're playing around with, it may be buggy.
 

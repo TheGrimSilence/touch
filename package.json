@@ -16,7 +16,7 @@
   },
   "main": "./lib/xtouch.js",
   "bin": {
-    "tsc": "./bin/xtouch.js"
+    "xtouch": "./bin/xtouch.js"
   },
   "devDependencies": {
     "@types/inquirer": "^0.0.43",
