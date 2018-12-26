@@ -21,6 +21,7 @@ test('Successfully creates a single file', () => {
   expect(existsSync(join(file[0]))).toBeTruthy();
 
   console.log(process.cwd());
+  // tslint:disable-next-line: no-empty
   rimraf('temp', () => {});
 });
 
@@ -32,6 +33,7 @@ test('Successfully creates multiple files', () => {
   });
 
   console.log(process.cwd());
+  // tslint:disable-next-line: no-empty
   rimraf('temp', () => {});
 });
 
