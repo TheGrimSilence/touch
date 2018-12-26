@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
-import { parseFile } from './parsePath';
+import { parsePath } from './parsePath';
 
 /**
  * Create files with the given parameters.
@@ -14,7 +14,7 @@ export function writeFile(files: string[]) {
   data = '';
 
   files.forEach((file) => {
-    const fileInfo = parseFile(file);
+    const fileInfo = parsePath(file);
     mkdirSync(fileInfo.path, { recursive: true });
     writeFileSync(
       join(process.cwd(), fileInfo.path, fileInfo.base),
