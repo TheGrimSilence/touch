@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-import '../lib/xtouch.js';
+require('../lib/xtouch.js');
