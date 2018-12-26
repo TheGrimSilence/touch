@@ -3,7 +3,7 @@ import { dirname, normalize, parse } from 'path';
 /**
  * An object defining basic information about a file and it's location.
  */
-interface IFileInfo {
+interface IBasicFileInfo {
   readonly base: string;
   readonly extension: string;
   readonly name: string;
@@ -15,7 +15,7 @@ interface IFileInfo {
  * Returns basic information about a file and it's location.
  * @param file
  */
-export function parseFile(file): IFileInfo {
+export function parseFile(file: string): IBasicFileInfo {
   /**
    * Returns a valid path
    */
