@@ -1,29 +1,39 @@
 {
   "name": "@xploration-tech/xtouch",
-  "version": "1.0.1",
+  "version": "2.1.3",
   "description": "Quick file creation with templates",
   "repository": "https://github.com/Xploration-Technologies/touch.git",
   "author": "Adrian (Grim) Roach <silencegrim@gmail.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "tsc -p ./src/tsconfig.json",
+    "build": "yarn clean && ts-node fuse.ts",
     "clean": "rimraf lib",
     "start": "node ./lib/xtouch.js",
-    "prepublish": "yarn clean"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "pub": "yarn publish --access public"
   },
   "main": "./lib/xtouch.js",
   "bin": {
-    "tsc": "./bin/xtouch.js"
+    "xtouch": "./bin/xtouch.js"
   },
   "devDependencies": {
     "@types/inquirer": "^0.0.43",
+    "@types/jest": "^23.3.10",
     "@types/node": "^10.12.17",
+    "@types/rimraf": "^2.0.2",
+    "fuse-box": "^3.6.0",
+    "jest": "^23.6.0",
     "rimraf": "^2.6.2",
+    "ts-jest": "^23.10.5",
     "tslint": "^5.12.0",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "uglify-es": "^3.3.9",
+    "uglify-js": "^3.4.9"
   },
   "dependencies": {
+    "chalk": "^2.4.1",
     "inquirer": "^6.2.1"
   }
 }
