@@ -2,10 +2,7 @@ import chalk from 'chalk';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-const json = readFileSync(
-  join(__dirname, '..', '..', '..', 'package.json'),
-  'utf8',
-);
+const json = readFileSync(join(__dirname, '..', 'package.json'), 'utf8');
 const pkg = JSON.parse(json);
 
 /**
