@@ -1,11 +1,10 @@
+import * as root from 'app-root-path';
 import chalk from 'chalk';
-// @ts-ignore
-import * as pkg from '~/package.json';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
-// import { readFileSync } from 'fs';
-
-// const json = readFileSync('~/package.json', 'utf8');
-// const pkg = JSON.parse(json);
+const json = readFileSync(join(root.path, 'package.json'), 'utf8');
+const pkg = JSON.parse(json);
 
 /**
  * Returns the name and version of the package.
