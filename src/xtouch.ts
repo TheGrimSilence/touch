@@ -1,21 +1,20 @@
 import { parseArgs } from 'base/parseArgs';
 import { error } from 'base/utils/console';
+import { help } from 'base/utils/help';
 import { version } from 'base/utils/version';
 import { writeFile } from 'base/writeFile';
-import chalk from 'chalk';
 
 const args = process.argv.slice(2);
 const environment = parseArgs(args);
 
-// TODO: Are we creating a file `else`, running interactive `env.interactive`,
-// TODO: or creating a project ?
 // TODO: Support writing template data under different `filename`
+// TODO: Add subcommand help
 // ? Should we add per-template commands to fill in data?
 
 const verbose = environment.verbose;
 
 if (environment.help) {
-  console.log(chalk`{red You've selected: help!}`);
+  help();
 } else if (environment.interactive) {
   error('Interactive Mode currently unavailable.');
 } else if (environment.version) {
