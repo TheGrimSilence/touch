@@ -2,9 +2,9 @@
 .fusebox/
 node_modules/
 src/
-templates/
 
 # Files
+.auto-changelog.json
 .gitignore
 fuse.ts
 jest.config.js

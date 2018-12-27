@@ -1,7 +1,7 @@
 import { existsSync } from 'fs';
 import { join } from 'path';
 
-import { writeFile } from '../utils/writeFile';
+import { writeFile } from '../base/writeFile';
 
 import rimraf = require('rimraf');
 
