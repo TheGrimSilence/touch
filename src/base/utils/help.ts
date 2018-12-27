@@ -84,5 +84,3 @@ export function help(): void {
   });
   console.log(table.print());
 }
-
-help();
