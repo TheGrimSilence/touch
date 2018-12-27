@@ -1,5 +1,6 @@
 import chalk from 'chalk';
-import { readFileSync } from 'fs';
+
+// import { readFileSync } from 'fs';
 
 const json = { name: '@xploration-tech/xtouch', version: '2.2.2' };
 // const json = readFileSync('../package.json', 'utf8');
