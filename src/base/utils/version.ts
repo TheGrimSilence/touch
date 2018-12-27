@@ -15,4 +15,3 @@ export function version(): void {
   Copyright (C) Xploration Technologies. All rights reserved.
   `);
 }
-console.log(json);
