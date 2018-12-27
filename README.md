@@ -30,6 +30,12 @@ For example, the following command would create _four_ new, empty files named `t
 xtouch tsconfig.json tslint.json index.ts package.json
 ```
 
+As of 2.5.0 you can now add content per file!
+
+```bash
+xtouch file1 -c Contents! file2 -c "Multiple words must be in quotations" file3 -c 'More contents!'
+```
+
 ### Addons _Coming Soon\*_
 
 When used with options, xtouch creates new files and projects based on the parameters given to it. xtouch cannot create more than one type of project simultaneously. However, _should the need arise_, we will add it accordingly.
