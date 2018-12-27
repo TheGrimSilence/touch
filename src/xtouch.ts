@@ -1,5 +1,5 @@
 import { parseArgs } from 'base/parseArgs';
-import { error } from 'base/utils/console';
+import { error, info } from 'base/utils/console';
 import { help } from 'base/utils/help';
 import { version } from 'base/utils/version';
 import { writeFile } from 'base/writeFile';
@@ -22,6 +22,10 @@ if (environment.help) {
   version();
 } else {
   writeFile(environment._, { verbose, content });
+  if (process.env['NODE_ENV'] === 'development') {
+    info(environment._);
+    info(content);
+  }
 }
 
 if (process.env['NODE_ENV'] === 'development') {
