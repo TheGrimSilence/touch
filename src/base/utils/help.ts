@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 
 import Table = require('easy-table');
+
 interface ICommand {
   readonly alias?: string;
   readonly description: string;
@@ -8,6 +9,13 @@ interface ICommand {
   readonly experimental?: boolean;
   readonly name: string;
 }
+
+/** The chosen color for enabled commands. */
+const enabled = 'blue';
+/** The chosen color for experimental commands. */
+const experimental = 'yellow';
+/** The chosen color for disabled commands. */
+const disabled = 'red';
 
 export const commands: ICommand[] = [
   {
@@ -57,30 +65,47 @@ const table = new Table();
  * Return usage information.
  */
 export function help(): void {
-  console.log('');
-  console.log('    Usage: xtouch [command] file_name(s)\n');
-  console.log(
-    '    You can use xTouch to create empty files, or generate project files!',
-  );
-  console.log(
-    '    In the absence of commands, all arguments are passed as file paths to make.\n',
-  );
-  console.log('    Commands:' + '\n');
+  console.log(`
+    Usage: xtouch [command] file_name(s)
+
+    You can use xTouch to create empty files, or generate project files!
+    In the absence of commands, all arguments are passed as file paths to make.
+
+    Commands:
+  `);
+
   commands.forEach((command) => {
     table.cell(
       'Enabled',
       chalk`    {${
-        command.enabled ? 'blue' : command.experimental ? 'yellow' : 'red'
+        command.enabled
+          ? enabled
+          : command.experimental
+          ? experimental
+          : disabled
       } •}`,
     );
+
     if (command.alias) {
       table.cell('Command', `${command.name}, ${command.alias}`);
     } else {
       table.cell('Command', `${command.name}`);
     }
+
     table.cell('Spacer', '   ');
     table.cell('Description', `    ${command.description}`);
     table.newRow();
   });
+
   console.log(table.print());
+  console.log(
+    chalk`
+    The indicators on the left show the status of each command.
+    They indicate the following:
+
+    ({${enabled} •}  Active) ({${experimental} •}  Experimental) ({${disabled} •}  Unfinished)
+    `,
+  );
 }
+
+help();
