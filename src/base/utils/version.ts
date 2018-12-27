@@ -14,6 +14,6 @@ export function version(): void {
   {cyan ${pkg.name}} {magenta v${pkg.version}}
   Copyright (C) ${new Date().getFullYear().toString()} ${
     pkg.company
-  } All rights reserved.
+  }. All rights reserved.
   `);
 }
