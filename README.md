@@ -1,5 +1,9 @@
 # X Touch
 
+[![npm downloads](https://img.shields.io/npm/dt/@xploration-tech/xtouch.svg?style=flat-square)](https://www.npmjs.com/package/@xploration-tech/xtouch) [![type support](https://img.shields.io/npm/types/@xploration-tech/xtouch.svg?style=flat-square)](https://www.npmjs.com/package/@xploration-tech/xtouch) [![npm versions](https://img.shields.io/npm/v/@xploration-tech/xtouch.svg?style=flat-square)](<[![](https://img.shields.io/npm/types/@xploration-tech/xtouch.svg?style=flat-square)](https://www.npmjs.com/package/@xploration-tech/xtouch)>) [![issues](https://img.shields.io/github/issues-raw/xploration-technologies/xtouch.svg?style=flat-square)](https://github.com/Xploration-Technologies/xtouch)
+
+[![follow xTech](https://img.shields.io/github/followers/xploration-technologies.svg?label=Follow&style=social)](https://github.com/Xploration-Technologies/xtouch) [![star xTouch](https://img.shields.io/github/stars/xploration-technologies/xtouch.svg?label=Stars&style=social)](https://github.com/Xploration-Technologies/xtouch) [![watch xTouch](https://img.shields.io/github/watchers/Xploration-Technologies/xtouch.svg?label=Watch&style=social)](https://github.com/Xploration-Technologies/xtouch)
+
 > The easiest way to create empty files, and typescript projects!
 
 ## Installation
