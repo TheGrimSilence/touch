@@ -16,9 +16,7 @@ interface IBasicPathInfo {
  * @param file
  */
 export function parsePath(file: string): IBasicPathInfo {
-  /**
-   * Returns a valid path
-   */
+  /** Returns a valid path */
   const normalized = normalize(file);
   const path = dirname(normalized);
   /**
