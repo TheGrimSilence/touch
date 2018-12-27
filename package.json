@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@types/app-root-path": "^1.2.4",
+    "@types/easy-table": "^0.0.32",
     "@types/jest": "^23.3.10",
     "@types/minimist": "^1.2.0",
     "@types/node": "^10.12.17",
@@ -41,6 +42,7 @@
     "@types/text-table": "^0.2.0",
     "app-root-path": "^2.1.0",
     "chalk": "^2.4.1",
+    "easy-table": "^1.1.1",
     "minimist": "^1.2.0",
     "text-table": "^0.2.0"
   }
