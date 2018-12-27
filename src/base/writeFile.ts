@@ -8,17 +8,15 @@ interface IOptions {
   verbose?: boolean;
   content?: string;
 }
+
 /**
  * Create files with the given parameters.
  * @param files The files to be created.
  * @param contents The data to be written into the files
  */
 export function writeFile(files: string[], options?: IOptions): void {
-  let data: string;
-
-  data = options.content ? options.content : '';
-
-  files.forEach((file) => {
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
     const fileInfo = parsePath(file);
 
     if (options.verbose) {
@@ -32,11 +30,10 @@ export function writeFile(files: string[], options?: IOptions): void {
     }
 
     mkdirSync(fileInfo.path, { recursive: true });
-
     writeFileSync(
       join(process.cwd(), fileInfo.path, fileInfo.base),
-      data,
+      options.content ? options.content[i] : '',
       'utf8',
     );
-  });
+  }
 }
