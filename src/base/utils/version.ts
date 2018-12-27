@@ -1,8 +1,11 @@
 import chalk from 'chalk';
-import { readFileSync } from 'fs';
+// @ts-ignore
+import * as pkg from '~/package.json';
 
-const json = readFileSync('~/package.json', 'utf8');
-const pkg = JSON.parse(json);
+// import { readFileSync } from 'fs';
+
+// const json = readFileSync('~/package.json', 'utf8');
+// const pkg = JSON.parse(json);
 
 /**
  * Returns the name and version of the package.
