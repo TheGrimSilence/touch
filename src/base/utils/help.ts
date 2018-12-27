@@ -25,6 +25,12 @@ export const commands: ICommand[] = [
     enabled: false,
   },
   {
+    name: 'content',
+    alias: 'c',
+    description: 'The content to be written into the file..',
+    enabled: true,
+  },
+  {
     name: 'help',
     alias: 'h',
     description: 'Output usage information.',
@@ -107,5 +113,3 @@ export function help(): void {
     `,
   );
 }
-
-help();

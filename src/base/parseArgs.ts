@@ -9,6 +9,8 @@ export interface IParsedArgs {
   _: string[];
   /** Selects an addon to import. */
   addon?: string;
+  /** The content to be written into the file. */
+  content?: string;
   /** Returns helpful information about what commands are available. */
   help?: boolean;
   /** Starts the experimental interactive mode. */
@@ -29,10 +31,11 @@ export interface IParsedArgs {
  * The actual commands taken in by minimist.
  */
 const options: minimist.Opts = {
-  string: ['addon', 'name', 'project', 'type'],
+  string: ['addon', 'content', 'name', 'project', 'type'],
   boolean: ['help', 'interactive', 'verbose', 'version'],
   alias: {
     addon: 'a',
+    content: 'c',
     help: 'h',
     interactive: 'i',
     name: 'n',
@@ -40,7 +43,6 @@ const options: minimist.Opts = {
     type: 't',
     verbose: 'v',
   },
-  default: {},
 };
 
 /**

@@ -12,6 +12,7 @@ const environment = parseArgs(args);
 // ? Should we add per-template commands to fill in data?
 
 const verbose = environment.verbose;
+const content = environment.content;
 
 if (environment.help) {
   help();
@@ -20,5 +21,9 @@ if (environment.help) {
 } else if (environment.version) {
   version();
 } else {
-  writeFile(environment._, verbose);
+  writeFile(environment._, { verbose, content });
+}
+
+if (process.env['NODE_ENV'] === 'development') {
+  console.log(args);
 }

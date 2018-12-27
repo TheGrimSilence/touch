@@ -4,20 +4,24 @@ import { join } from 'path';
 
 import { parsePath } from './parsePath';
 
+interface IOptions {
+  verbose?: boolean;
+  content?: string;
+}
 /**
  * Create files with the given parameters.
  * @param files The files to be created.
  * @param contents The data to be written into the files
  */
-export function writeFile(files: string[], verbose?: boolean): void {
+export function writeFile(files: string[], options?: IOptions): void {
   let data: string;
 
-  data = '';
+  data = options.content ? options.content : '';
 
   files.forEach((file) => {
     const fileInfo = parsePath(file);
 
-    if (verbose) {
+    if (options.verbose) {
       if (fileInfo.path === '.') {
         console.log(chalk`[{blue info}] {bold Creating} ${fileInfo.base}`);
       } else {
