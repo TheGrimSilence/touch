@@ -6,6 +6,7 @@
   "author": "Adrian (Grim) Roach <silencegrim@gmail.com>",
   "license": "MIT",
   "private": false,
+  "company": "Xploration Technologies",
   "preferGlobal": true,
   "scripts": {
     "build": "yarn clean && ts-node fuse.ts",

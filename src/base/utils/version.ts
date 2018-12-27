@@ -12,6 +12,8 @@ const pkg = JSON.parse(json);
 export function version(): void {
   console.log(chalk`
   {cyan ${pkg.name}} {magenta v${pkg.version}}
-  Copyright (C) Xploration Technologies. All rights reserved.
+  Copyright (C) ${new Date().getFullYear().toString()} ${
+    pkg.company
+  } All rights reserved.
   `);
 }
