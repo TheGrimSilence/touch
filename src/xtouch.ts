@@ -1,6 +1,6 @@
 import { parseArgs } from 'base/parseArgs';
 import { error } from 'base/utils/console';
-import { version } from 'base/version';
+import { version } from 'base/utils/version';
 import { writeFile } from 'base/writeFile';
 import chalk from 'chalk';
 

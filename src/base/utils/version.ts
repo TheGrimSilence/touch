@@ -1,8 +1,10 @@
 import chalk from 'chalk';
 import { readFileSync } from 'fs';
 
-const json = readFileSync('../package.json', 'utf8');
-const pkg = JSON.parse(json);
+const json = { name: '@xploration-tech/xtouch', version: '2.2.2' };
+// const json = readFileSync('../package.json', 'utf8');
+const pkg = json;
+// const pkg = JSON.parse(json);
 
 /**
  * Returns the name and version of the package.

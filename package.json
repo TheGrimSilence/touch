@@ -13,7 +13,7 @@
     "start": "node ./lib/xtouch.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepublish": "yarn build && auto-changelog -p && git add CHANGELOG.md",
+    "prepublishOnly": "yarn build && auto-changelog -p && git add CHANGELOG.md",
     "pub": "yarn publish --access public"
   },
   "main": "./lib/xtouch.js",
@@ -36,7 +36,9 @@
     "uglify-js": "^3.4.9"
   },
   "dependencies": {
+    "@types/text-table": "^0.2.0",
     "chalk": "^2.4.1",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "text-table": "^0.2.0"
   }
 }
