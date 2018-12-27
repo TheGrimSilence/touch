@@ -1,9 +1,7 @@
-import * as root from 'app-root-path';
 import chalk from 'chalk';
 import { readFileSync } from 'fs';
-import { join } from 'path';
 
-const json = readFileSync(join(root.path, 'package.json'), 'utf8');
+const json = readFileSync('~/package.json', 'utf8');
 const pkg = JSON.parse(json);
 
 /**
