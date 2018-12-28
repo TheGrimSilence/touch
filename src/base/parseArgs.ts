@@ -15,13 +15,15 @@ export interface IParsedArgs {
   help?: boolean;
   /** Starts the experimental interactive mode. */
   interactive?: boolean;
-  /** The name to use in the addon creation */
+  /** The name to use in the addon creation. Replaces all `__NAME__` instances. *Only works where supported.* */
   name?: string;
+  /** The to write the contents to. *Only works where supported.* */
+  path?: string;
   /** Selects a project to import. */
   project?: string;
-  /** Selects the appropriate addon file to import. */
+  /** Selects the appropriate addon file or project to import. */
   type?: string;
-  /** Tells the running process to disclose it's process. */
+  /** Output verbose messages on internal operations. */
   verbose?: boolean;
   /** Returns the package name and version. */
   version?: boolean;
@@ -31,7 +33,7 @@ export interface IParsedArgs {
  * The actual commands taken in by minimist.
  */
 const options: minimist.Opts = {
-  string: ['addon', 'content', 'name', 'project', 'type'],
+  string: ['addon', 'content', 'name', 'path', 'project', 'type'],
   boolean: ['help', 'interactive', 'verbose', 'version'],
   alias: {
     addon: 'a',

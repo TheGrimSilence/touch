@@ -1,3 +1,4 @@
+import { addon } from 'base/addon';
 import { parseArgs } from 'base/parseArgs';
 import { error, info, warn } from 'base/utils/console';
 import { help } from 'base/utils/help';
@@ -12,7 +13,12 @@ const content: string[] = [].concat(environment.content);
 if (environment.help) {
   help();
 } else if (environment.addon) {
-  warn('Addons currently unavailable.');
+  addon({
+    addon: environment.addon,
+    type: environment.type,
+    path: environment.path,
+    name: environment.name,
+  });
 } else if (environment.interactive) {
   error('Interactive Mode currently unavailable.');
 } else if (environment.project) {
@@ -20,7 +26,7 @@ if (environment.help) {
 } else if (environment.version) {
   version();
 } else {
-  writeFile(environment._, { verbose, content });
+  writeFile(environment._, { content, verbose });
   if (process.env['NODE_ENV'] === 'development') {
     info(environment._);
     info(content);

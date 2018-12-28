@@ -5,14 +5,16 @@ import { join } from 'path';
 import { parsePath } from './parsePath';
 
 interface IWriteFileOptions {
-  verbose?: boolean;
+  /** The data to be written into the files. */
   content?: string[];
+  /** Output verbose messages on internal operations. */
+  verbose?: boolean;
 }
 
 /**
  * Create files with the given parameters.
  * @param files The files to be created.
- * @param contents The data to be written into the files
+ * @param contents The data to be written into the files.
  */
 export function writeFile(files: string[], options?: IWriteFileOptions): void {
   for (let i = 0; i < files.length; i++) {
