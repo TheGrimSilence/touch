@@ -22,7 +22,7 @@ export const commands: ICommand[] = [
     name: 'addon',
     alias: 'a',
     description: 'Selects an addon to import.',
-    enabled: false,
+    enabled: true,
   },
   {
     name: 'content',
