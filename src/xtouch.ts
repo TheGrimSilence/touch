@@ -8,7 +8,7 @@ const args = process.argv.slice(2);
 const environment = parseArgs(args);
 
 // TODO: Support writing template data under different `filename`
-// TODO: Add subcommand help
+// TODO: Add individual command help
 // ? Should we add per-template commands to fill in data?
 
 const verbose = environment.verbose;
