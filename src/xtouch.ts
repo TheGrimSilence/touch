@@ -16,6 +16,7 @@ const environment = parseArgs(args);
 const verbose = environment.verbose;
 const content: string[] = [].concat(environment.content);
 
+// TODO: Clean this up. Drop the IFs and test Events?
 if (environment.help) {
   help();
 } else if (environment.interactive) {
