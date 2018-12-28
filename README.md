@@ -36,15 +36,31 @@ As of 2.5.0 you can now add content per file!
 xtouch file1 -c Contents! file2 -c "Multiple words must be in quotations" file3 -c 'More contents!'
 ```
 
-### Addons _Coming Soon\*_
+### Addons
 
-When used with options, xTouch creates new files and projects based on the parameters given to it. xTouch cannot create more than one type of project simultaneously. However, _should the need arise_, we will add it accordingly.
+When used with options, xTouch creates new files based on the parameters given to it. xTouch cannot create more than one type of addon simultaneously. However, _should the need arise_, we will add it accordingly.
 
-When creating project files, xTouch needs very few parameters to get you started. For example, the following command would create a _[Fusebox](https://fuse-box.org)_-powered [React](https://reactjs.org) application.
+When creating project files, xTouch needs very few parameters to get you started. For example, the following command would create a _[Fusebox](https://fuse-box.org)_-powered module bundling file! The very same file that powers xTouch's bundles!
 
 ```bash
-xtouch --addon fuse-box --type react
+xtouch --addon fuse-box --type module.ts
 ```
+
+You can also specify a name and path! In this example, xTouch will be replacing `__NAME__` with `83a9999ac29bb5ed086930699e307649`, simply a rather extreme example of a bundle name. xTouch will write the addon file into the `temp/` directory. By default, xTouch will simply write the addon into the CWD (Current Working Directory).
+
+```bash
+xtouch -a fuse-box -t module.ts -n 83a9999ac29bb5ed086930699e307649 --path temp
+```
+
+```diff
+Sparky.task('default', () => {
+  ...
+-  fuse.bundle('__NAME__').instructions('> xtouch.ts');
++  fuse.bundle('83a9999ac29bb5ed086930699e307649').instructions('> xtouch.ts');
+});
+```
+
+Addons work by taking a file, renaming it, and putting it under a categoric folder. For example: `addons/<addon>/<type>`. Because we name the file as the type, we add `// @xt-filename <filename.extension>` at the top of that addon file so that xTouch knows the correct filename to write the data into when creating the addon. Don't worry, we made sure that xTouch removes this metadata during creation.
 
 ### Interactive `alpha` _Coming Soon\*_
 
