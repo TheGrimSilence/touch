@@ -17,6 +17,8 @@ const verbose = environment.verbose;
 const content: string[] = [].concat(environment.content);
 
 // TODO: Clean this up. Drop the IFs and test Events?
+// * This isn't doing any damage. But, when it causes performance
+// * issues, fix it.
 if (environment.help) {
   help();
 } else if (environment.interactive) {
