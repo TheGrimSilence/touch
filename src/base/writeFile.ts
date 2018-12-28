@@ -24,7 +24,9 @@ export function writeFile(files: string[], options?: IWriteFileOptions): void {
         console.log(chalk`[{blue info}] {bold Creating} ${fileInfo.base}`);
       } else {
         console.log(
-          chalk`[{blue info}] Creating ${fileInfo.base} under ${fileInfo.path}/`,
+          chalk`[{blue info}] Creating ${fileInfo.base} under ${
+            fileInfo.path
+          }\\`,
         );
       }
     }
