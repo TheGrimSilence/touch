@@ -15,7 +15,7 @@ const file: string[] = ['temp/file1single'];
 const tempDir = join(__dirname, '..', '..', 'temp');
 console.log(process.cwd());
 
-test('Successfully creates a single file', () => {
+test.skip('Successfully creates a single file', () => {
   writeFile(file);
 
   expect(existsSync(join(file[0]))).toBeTruthy();
@@ -25,7 +25,7 @@ test('Successfully creates a single file', () => {
   rimraf('temp', () => {});
 });
 
-test('Successfully creates multiple files', () => {
+test.skip('Successfully creates multiple files', () => {
   writeFile(files);
 
   files.forEach((x) => {
