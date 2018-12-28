@@ -4,7 +4,7 @@ import { join } from 'path';
 
 import { parsePath } from './parsePath';
 
-interface IOptions {
+interface IWriteFileOptions {
   verbose?: boolean;
   content?: string[];
 }
@@ -14,7 +14,7 @@ interface IOptions {
  * @param files The files to be created.
  * @param contents The data to be written into the files
  */
-export function writeFile(files: string[], options?: IOptions): void {
+export function writeFile(files: string[], options?: IWriteFileOptions): void {
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
     const fileInfo = parsePath(file);
@@ -28,6 +28,7 @@ export function writeFile(files: string[], options?: IOptions): void {
         );
       }
     }
+
     mkdirSync(fileInfo.path, { recursive: true });
 
     writeFileSync(

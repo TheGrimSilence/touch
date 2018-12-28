@@ -64,9 +64,6 @@ export const commands: ICommand[] = [
 
 const table = new Table();
 
-// TODO: Clean this shit up!
-// ! Create custom table methods
-// ! Create custom output methods
 /**
  * Return usage information.
  */
