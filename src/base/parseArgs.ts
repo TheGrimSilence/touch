@@ -10,7 +10,7 @@ export interface IParsedArgs {
   /** Selects an addon to import. */
   addon?: string;
   /** The content to be written into the file. */
-  content?: string;
+  content?: string | string[];
   /** Returns helpful information about what commands are available. */
   help?: boolean;
   /** Starts the experimental interactive mode. */

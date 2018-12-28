@@ -6,7 +6,7 @@ import { parsePath } from './parsePath';
 
 interface IOptions {
   verbose?: boolean;
-  content?: string;
+  content?: string[];
 }
 
 /**
@@ -15,6 +15,7 @@ interface IOptions {
  * @param contents The data to be written into the files
  */
 export function writeFile(files: string[], options?: IOptions): void {
+  console.log(files);
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
     const fileInfo = parsePath(file);
@@ -28,11 +29,12 @@ export function writeFile(files: string[], options?: IOptions): void {
         );
       }
     }
-
+    console.log(options.content);
     mkdirSync(fileInfo.path, { recursive: true });
+
     writeFileSync(
       join(process.cwd(), fileInfo.path, fileInfo.base),
-      options.content ? options.content[i] : '',
+      options.content[i] === undefined ? '' : options.content[i],
       'utf8',
     );
   }

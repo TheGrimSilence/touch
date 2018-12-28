@@ -12,7 +12,7 @@ const environment = parseArgs(args);
 // ? Should we add per-template commands to fill in data?
 
 const verbose = environment.verbose;
-const content = environment.content;
+const content: string[] = [].concat(environment.content);
 
 if (environment.help) {
   help();
