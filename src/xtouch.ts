@@ -9,6 +9,8 @@ const environment = parseArgs(args);
 
 // TODO: Support writing template data under different `filename`
 // TODO: Add individual command help
+// TODO: use `opn` to create a 'issue' command for quick issue reporting
+// TODO: issue should support: Bug, Feature
 // ? Should we add per-template commands to fill in data?
 
 const verbose = environment.verbose;
