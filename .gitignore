@@ -1,4 +1,8 @@
+# folders
 node_modules/
-temp/
-lib/
 .fusebox/
+out/
+lib/
+
+# files
+yarn-error.log
