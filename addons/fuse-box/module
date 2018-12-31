@@ -9,6 +9,6 @@ Sparky.task('default', () => {
     plugins: [],
   });
 
-  fuse.bundle('__NAME__').instructions('> xtouch.ts');
+  fuse.bundle('__NAME__').instructions('> index.ts');
   fuse.run();
 });
