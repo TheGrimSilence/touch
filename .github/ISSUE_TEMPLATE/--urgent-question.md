@@ -1,7 +1,7 @@
 ---
 name: "⁉ Urgent Question"
 about: Ask an urgent question about xTouch, top priority, don't abuse this
-title: "⁉"
+title: "⁉ <short_description>"
 labels: urgent question
 assignees: ''
 
