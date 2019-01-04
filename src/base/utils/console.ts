@@ -10,9 +10,18 @@ export function errorVerbose(msg: string): void {
 }
 
 /** Returns a blue verbose-locked message. */
-export function infoVerbose(msg: string | string[] | {}): void {
+export function infoVerbose(msg: string | string[] | {}): void;
+export function infoVerbose(
+  msg: string | string[] | {},
+  rest: string | string[] | {},
+): void;
+export function infoVerbose(msg, rest?) {
   if (verbose) {
-    return console.info(chalk`[{blue info}]`, msg);
+    if (rest) {
+      return console.info(chalk`[{blue info}]`, msg, rest);
+    } else {
+      return console.info(chalk`[{blue info}]`, msg);
+    }
   } else {
     return;
   }

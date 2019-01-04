@@ -56,9 +56,26 @@ export function addonCreation(options: IAddonOptions): void {
   handleDevDependencies(config.devDependencies, options.noDependencies);
 
   if (!options.testMode) {
-    mkdirSync(options.path === undefined ? '.' : options.path, {
-      recursive: true,
-    });
+    infoVerbose(
+      `Current path: ${
+        options.path
+          ? join(process.cwd(), options.path)
+          : config.defaultPath
+          ? join(process.cwd(), config.defaultPath)
+          : process.cwd()
+      }`,
+    );
+
+    mkdirSync(
+      options.path
+        ? join(process.cwd(), options.path)
+        : config.defaultPath
+        ? join(process.cwd(), config.defaultPath)
+        : '.',
+      {
+        recursive: true,
+      },
+    );
 
     writeFileSync(
       options.path
@@ -84,7 +101,7 @@ function isEmpty(obj: {}): boolean {
   return true;
 }
 
-function handleScripts(config, noScripts: boolean): void {
+function handleScripts(config: IPair, noScripts: boolean): void {
   if (config === undefined) {
     errorVerbose('Scripts returned undefined, aborting.');
     throw new Error(`config.scripts cannot be undefined, check configuration`);
@@ -96,12 +113,12 @@ function handleScripts(config, noScripts: boolean): void {
     warnVerbose('no-scripts detected, ignoring scripts');
   }
 
-  infoVerbose(`Scripts: ${config}`);
+  infoVerbose(`Scripts:`, JSON.stringify(config));
   infoVerbose(`Updating package.json`);
   edit('scripts', config);
 }
 
-function handleDependencies(config, noDependencies: boolean): void {
+function handleDependencies(config: IPair, noDependencies: boolean): void {
   if (config === undefined) {
     errorVerbose('Dependencies returned undefined, aborting.');
     throw new Error(
@@ -115,12 +132,12 @@ function handleDependencies(config, noDependencies: boolean): void {
     warnVerbose('no-dependencies detected, ignoring dependencies');
   }
 
-  infoVerbose(`Dependencies: ${config}`);
+  infoVerbose(`Dependencies:`, JSON.stringify(config));
   infoVerbose(`Updating package.json`);
   edit('dependencies', config);
 }
 
-function handleDevDependencies(config, noDependencies: boolean): void {
+function handleDevDependencies(config: IPair, noDependencies: boolean): void {
   if (config === undefined) {
     errorVerbose('DevDependencies returned undefined, aborting.');
     throw new Error(
@@ -134,7 +151,7 @@ function handleDevDependencies(config, noDependencies: boolean): void {
     warnVerbose('no-dependencies detected, ignoring devDependencies');
   }
 
-  infoVerbose(`DevDependencies: ${config}`);
+  infoVerbose(`DevDependencies:`, JSON.stringify(config));
   infoVerbose(`Updating package.json`);
   edit('devDependencies', config);
 }

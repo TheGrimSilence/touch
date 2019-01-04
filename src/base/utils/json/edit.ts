@@ -9,7 +9,7 @@ interface IJsonEditor {
 }
 
 export function edit(key: string, data: {}): void {
-  infoVerbose(pkgLocationCwd);
+  infoVerbose(`Package Location: ${pkgLocationCwd}`);
   const json: IJsonEditor = editor(pkgLocationCwd, { autosave: true });
 
   json.set(key, data);
