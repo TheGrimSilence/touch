@@ -13,6 +13,7 @@ interface IPackage {
   readonly devDependencies: { [args: string]: any };
 }
 
-export const pkgLocation = join(root.path, '..', 'package.json');
-const json = readFileSync(pkgLocation, 'utf8');
+export const pkgLocationLocal = join(root.path, '..', 'package.json');
+export const pkgLocationCwd = join(process.cwd(), 'package.json');
+const json = readFileSync(pkgLocationLocal, 'utf8');
 export const pkg: IPackage = JSON.parse(json);

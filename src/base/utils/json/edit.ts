@@ -1,5 +1,5 @@
 import { infoVerbose } from 'base/utils/console';
-import { pkgLocation } from 'base/utils/package';
+import { pkgLocationCwd } from 'base/utils/package';
 
 // tslint:disable-next-line: no-var-requires
 const editor = require('edit-json-file');
@@ -9,8 +9,8 @@ interface IJsonEditor {
 }
 
 export function edit(key: string, data: {}): void {
-  infoVerbose(pkgLocation);
-  const json: IJsonEditor = editor(pkgLocation, { autosave: true });
+  infoVerbose(pkgLocationCwd);
+  const json: IJsonEditor = editor(pkgLocationCwd, { autosave: true });
 
   json.set(key, data);
 }
