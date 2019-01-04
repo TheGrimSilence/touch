@@ -18,6 +18,10 @@ if (environment.help) {
     type: environment.type,
     path: environment.path,
     name: environment.name,
+    noScripts: environment.noScripts,
+    noDependencies: environment.noDependencies,
+    testMode: environment.testMode,
+    verbose: environment.verbose,
   });
 } else if (environment.interactive) {
   error('Interactive Mode currently unavailable.');

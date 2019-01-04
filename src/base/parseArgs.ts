@@ -4,7 +4,6 @@ import * as minimist from 'minimist';
  * The available commands within xTouch.
  */
 export interface IParsedArgs {
-  [arg: string]: any;
   /** In the absence of commands, all arguments are passed as file paths to make. */
   _: string[];
   /** Selects an addon to import. */
@@ -17,10 +16,16 @@ export interface IParsedArgs {
   interactive?: boolean;
   /** The name to use in the addon creation. Replaces all `__NAME__` instances. *Only works where supported.* */
   name?: string;
+  /** Should we add dependencies to the users package.json? */
+  noDependencies?: boolean;
+  /** Should we add scripts to the users package.json? */
+  noScripts?: boolean;
   /** The to write the contents to. *Only works where supported.* */
   path?: string;
   /** Selects a project to import. */
   project?: string;
+  /** Deactivates various features for live testing instead of unit testing. */
+  testMode?: boolean;
   /** Selects the appropriate addon file or project to import. */
   type?: string;
   /** Output verbose messages on internal operations. */
@@ -34,7 +39,15 @@ export interface IParsedArgs {
  */
 const options: minimist.Opts = {
   string: ['addon', 'content', 'name', 'path', 'project', 'type'],
-  boolean: ['help', 'interactive', 'verbose', 'version'],
+  boolean: [
+    'help',
+    'interactive',
+    'no-dependencies',
+    'no-scripts',
+    'test-mode',
+    'verbose',
+    'version',
+  ],
   alias: {
     addon: 'a',
     content: 'c',
