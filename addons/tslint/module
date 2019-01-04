@@ -1,4 +1,3 @@
-// @xt-filename tslint.json
 {
   "defaultSeverity": "error",
   "extends": ["tslint:recommended"],
