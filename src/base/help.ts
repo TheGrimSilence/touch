@@ -53,7 +53,7 @@ export const commands: ICommand[] = [
     name: 'type',
     alias: 't',
     description: 'Selects the appropriate addon file to import.',
-    enabled: false,
+    enabled: true,
   },
   {
     name: 'version',
