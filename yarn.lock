@@ -1111,6 +1111,17 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
+edit-json-file@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/edit-json-file/-/edit-json-file-1.2.1.tgz#151f337ebe70d39964e3388c1320aa4acddd9bef"
+  integrity sha512-/azxdkmsXKfR5AbrNmj2E5rUg+RZk1NHeBk/GaGBeEEwldNS8UzD8Enq9+qkMXnslmZr2iZEFpvrKHeSmxMCAw==
+  dependencies:
+    find-value "^1.0.3"
+    iterate-object "^1.3.2"
+    r-json "^1.2.5"
+    set-value "^0.4.0"
+    w-json "^1.3.5"
+
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -1460,6 +1471,11 @@ find-up@^2.1.0:
   integrity sha1-RdG35QbHF93UgndaK3eSCjwMV6c=
   dependencies:
     locate-path "^2.0.0"
+
+find-value@^1.0.3:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/find-value/-/find-value-1.0.11.tgz#493c062884d4aa26a66571adedea98a46ad3a060"
+  integrity sha512-ECGsf/85PJgK/kOv6q1/MA1pawuBvQi12td/7MQHakfE7/P2jFgUeo0BL1dbAF97DPOTrtsrFBHkwBnPMWZiKg==
 
 fliplog@^0.3.13:
   version "0.3.13"
@@ -2212,6 +2228,11 @@ istanbul-reports@^1.5.1:
   integrity sha512-+cfoZ0UXzWjhAdzosCPP3AN8vvef8XDkWtTfgaN+7L3YTpNYITnCaEkceo5SEYy644VkHka/P1FvkWvrG/rrJw==
   dependencies:
     handlebars "^4.0.3"
+
+iterate-object@^1.3.2:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/iterate-object/-/iterate-object-1.3.3.tgz#c58e60f7f0caefa2d382027a484b215988a7a296"
+  integrity sha512-DximWbkke36cnrSfNJv6bgcB2QOMV9PRD2FiowwzCoMsh8RupFLdbNIzWe+cVDWT+NIMNJgGlB1dGxP6kpzGtA==
 
 jest-changed-files@^23.4.2:
   version "23.4.2"
@@ -3455,6 +3476,11 @@ qs@6.5.2, qs@~6.5.2:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
 
+r-json@^1.2.5:
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/r-json/-/r-json-1.2.9.tgz#0637da3485b0b4492e9ffae85796f8b2f373f600"
+  integrity sha512-E5u25XBE7PpZmH5XwtthAmNvSLMTygDQMpcPtCTUBdvwPaqgIYJrxlRQJhG55Sgz7uC0Tuyh5nqNrsDT3uiefA==
+
 randomatic@^3.0.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-3.1.1.tgz#b776efc59375984e36c537b2f51a1f0aff0da1ed"
@@ -3828,7 +3854,7 @@ set-blocking@^2.0.0, set-blocking@~2.0.0:
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
   integrity sha1-BF+XgtARrppoA93TgrJDkrPYkPc=
 
-set-value@^0.4.3:
+set-value@^0.4.0, set-value@^0.4.3:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/set-value/-/set-value-0.4.3.tgz#7db08f9d3d22dc7f78e53af3c3bf4666ecdfccf1"
   integrity sha1-fbCPnT0i3H945Trzw79GZuzfzPE=
@@ -4484,6 +4510,11 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
+
+w-json@^1.3.5:
+  version "1.3.9"
+  resolved "https://registry.yarnpkg.com/w-json/-/w-json-1.3.9.tgz#c1ddfbae1279f7e84d5a1bd587b53a03f5c5cff8"
+  integrity sha512-9hvWhnNZ5J3ypOJt2LzmAQBl1NrQBZED/E8MwkZQ+lGTq51hyR9zeH0dgaJzLfzOVoTbxe/yPqL10c5WVsHvbg==
 
 w3c-hr-time@^1.0.1:
   version "1.0.1"
