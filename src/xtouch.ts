@@ -1,19 +1,20 @@
-import { addon } from 'base/addon';
-import { parseArgs } from 'base/parseArgs';
-import { error, info, warn } from 'base/utils/console';
-import { help } from 'base/utils/help';
-import { version } from 'base/utils/version';
-import { writeFile } from 'base/writeFile';
+import { addonCreation } from 'base/addonCreation';
+import { fileCreation } from 'base/fileCreation';
+import { help } from 'base/help';
+import { error, infoVerbose } from 'base/utils/console';
+import { parseArgs } from 'base/utils/parseArgs';
+import { version } from 'base/version';
 
 const args = process.argv.slice(2);
 const environment = parseArgs(args);
-const verbose = environment.verbose;
+verbose = environment.verbose;
 const content: string[] = [].concat(environment.content);
 
 if (environment.help) {
   help();
 } else if (environment.addon) {
-  addon({
+  infoVerbose(`Addon Creation`);
+  addonCreation({
     addon: environment.addon,
     type: environment.type,
     path: environment.path,
@@ -21,22 +22,14 @@ if (environment.help) {
     noScripts: environment.noScripts,
     noDependencies: environment.noDependencies,
     testMode: environment.testMode,
-    verbose: environment.verbose,
   });
 } else if (environment.interactive) {
   error('Interactive Mode currently unavailable.');
 } else if (environment.project) {
-  warn('Projects currently unavailable.');
+  error('Projects currently unavailable.');
 } else if (environment.version) {
   version();
 } else {
-  writeFile(environment._, { content, verbose });
-  if (process.env['NODE_ENV'] === 'development') {
-    info(environment._);
-    info(content);
-  }
-}
-
-if (process.env['NODE_ENV'] === 'development') {
-  console.log(args);
+  infoVerbose(`File Creation`);
+  fileCreation(environment._, content);
 }

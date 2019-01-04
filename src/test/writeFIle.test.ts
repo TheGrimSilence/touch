@@ -1,7 +1,7 @@
 import { existsSync } from 'fs';
 import { join } from 'path';
 
-import { writeFile } from '../base/writeFile';
+import { fileCreation } from '../base/fileCreation';
 
 import rimraf = require('rimraf');
 
@@ -16,7 +16,7 @@ const tempDir = join(__dirname, '..', '..', 'temp');
 console.log(process.cwd());
 
 test.skip('Successfully creates a single file', () => {
-  writeFile(file);
+  fileCreation(file);
 
   expect(existsSync(join(file[0]))).toBeTruthy();
 
@@ -26,7 +26,7 @@ test.skip('Successfully creates a single file', () => {
 });
 
 test.skip('Successfully creates multiple files', () => {
-  writeFile(files);
+  fileCreation(files);
 
   files.forEach((x) => {
     expect(existsSync(join(x))).toBeTruthy();

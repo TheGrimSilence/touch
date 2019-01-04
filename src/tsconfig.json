@@ -3,7 +3,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es6",
-    "noUnusedLocals": false,
+    "noUnusedLocals": true,
     "removeComments": true,
     "baseUrl": ".",
     "outDir": "../lib",

@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from 'fs';
 import { join } from 'path';
 
-import { addon } from '../base/addon';
+import { addonCreation } from '../base/addonCreation';
 
 import rimraf = require('rimraf');
 
@@ -10,7 +10,7 @@ const path = 'temp';
 
 describe('Addon functionality', () => {
   test('Successfully creates an addon with a path', () => {
-    addon({ addon: 'fuse-box', type: 'module.ts', path });
+    addonCreation({ addon: 'fuse-box', type: 'module.ts', path });
 
     expect(existsSync(join(process.cwd(), path, 'fuse.ts'))).toBeTruthy();
 
@@ -19,7 +19,7 @@ describe('Addon functionality', () => {
   });
 
   test('Successfully creates an addon with a name', () => {
-    addon({ addon: 'fuse-box', type: 'module.ts', name: hash, path });
+    addonCreation({ addon: 'fuse-box', type: 'module.ts', name: hash, path });
 
     expect(
       existsSync(join(process.cwd(), 'fuse.ts')) &&
