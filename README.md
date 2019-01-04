@@ -4,7 +4,7 @@
 
 [![follow xTech](https://img.shields.io/github/followers/xploration-technologies.svg?label=Follow&style=social)](https://github.com/Xploration-Technologies/xtouch) [![star xTouch](https://img.shields.io/github/stars/xploration-technologies/xtouch.svg?label=Stars&style=social)](https://github.com/Xploration-Technologies/xtouch) [![watch xTouch](https://img.shields.io/github/watchers/Xploration-Technologies/xtouch.svg?label=Watch&style=social)](https://github.com/Xploration-Technologies/xtouch)
 
-> The easiest way to create empty files, and typescript projects!
+> The easiest way to create empty files and folder trees at a glance!
 
 ## Installation
 
