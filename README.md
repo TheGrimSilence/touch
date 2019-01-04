@@ -60,7 +60,7 @@ Sparky.task('default', () => {
 });
 ```
 
-Addons work by taking a file, renaming it, and putting it under a categoric folder. For example: `addons/<addon>/<type>`. Because we name the file as the type, we add `// @xt-filename <filename.extension>` at the top of that addon file so that xTouch knows the correct filename to write the data into when creating the addon. Don't worry, we made sure that xTouch removes this metadata during creation.
+Addons work by taking a file, renaming it, and putting it under a categoric folder. For example: `addons/<addon>/<type>`. Then we include a configuration file, and we're go for liftoff!
 
 ### Interactive `alpha` _Coming Soon\*_
 
