@@ -6,7 +6,7 @@
 
 > The easiest way to create empty files and folder trees at a glance!
 
-<a href="https://www.buymeacoffee.com/thegrimsilence" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+<a href="https://www.buymeacoffee.com/thegrimsilence" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/black_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 ## Installation
 
