@@ -31,5 +31,9 @@ if (environment.help) {
   version();
 } else {
   infoVerbose(`File Creation`);
-  fileCreation(environment._, content);
+  fileCreation(environment._, {
+    content,
+    extension: environment.extension,
+    path: environment.path,
+  });
 }

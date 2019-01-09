@@ -10,6 +10,8 @@ export interface IParsedArgs {
   addon?: string;
   /** The content to be written into the file. */
   content?: string | string[];
+  /** The file extension to be used for all files in the instance. */
+  extension?: string;
   /** Returns helpful information about what commands are available. */
   help?: boolean;
   /** Starts the experimental interactive mode. */
@@ -20,7 +22,7 @@ export interface IParsedArgs {
   noDependencies?: boolean;
   /** Should we add scripts to the users package.json? */
   noScripts?: boolean;
-  /** The to write the contents to. *Only works where supported.* */
+  /** The path to write the files to. *Only works where supported.* */
   path?: string;
   /** Selects a project to import. */
   project?: string;
@@ -38,7 +40,7 @@ export interface IParsedArgs {
  * The actual commands taken in by minimist.
  */
 const options: minimist.Opts = {
-  string: ['addon', 'content', 'name', 'path', 'project', 'type'],
+  string: ['addon', 'content', 'extension', 'name', 'path', 'project', 'type'],
   boolean: [
     'help',
     'interactive',
@@ -51,6 +53,7 @@ const options: minimist.Opts = {
   alias: {
     addon: 'a',
     content: 'c',
+    extension: 'e',
     help: 'h',
     interactive: 'i',
     name: 'n',
