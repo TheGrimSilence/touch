@@ -35,13 +35,13 @@ export function fileCreation(
     mkdirSync(options.path ? options.path : fileInfo.path, { recursive: true });
 
     writeFileSync(
-      options.extension
-        ? join(
+      join(
             process.cwd(),
             options.path ? options.path : fileInfo.path,
-            `${fileInfo.name}.${options.extension}`,
-          )
-        : join(process.cwd(), fileInfo.path, fileInfo.base),
+            options.extension
+              ? `${fileInfo.name}.${options.extension}`
+              : fileInfo.base,
+          ),
       options.content[i] === undefined ? '' : options.content[i],
       'utf8',
     );
