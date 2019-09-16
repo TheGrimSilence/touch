@@ -22,29 +22,5 @@
   "main": "./lib/xtouch.js",
   "bin": {
     "xtouch": "./bin/xtouch.js"
-  },
-  "devDependencies": {
-    "@types/app-root-path": "^1.2.4",
-    "@types/easy-table": "^0.0.32",
-    "@types/jest": "^23.3.10",
-    "@types/minimist": "^1.2.0",
-    "@types/node": "^10.12.17",
-    "@types/rimraf": "^2.0.2",
-    "auto-changelog": "^1.10.2",
-    "cross-env": "^5.2.0",
-    "fuse-box": "^3.6.0",
-    "jest": "^23.6.0",
-    "rimraf": "^2.6.2",
-    "ts-jest": "^23.10.5",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.12.0",
-    "typescript": "^3.2.2"
-  },
-  "dependencies": {
-    "app-root-path": "^2.1.0",
-    "chalk": "^2.4.1",
-    "easy-table": "^1.1.1",
-    "edit-json-file": "^1.2.1",
-    "minimist": "^1.2.0"
   }
 }

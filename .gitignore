@@ -1,8 +1,1 @@
-# folders
-node_modules/
-.fusebox/
-out/
-lib/
-
-# files
-yarn-error.log
+node_modules

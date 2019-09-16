@@ -1,9 +1,0 @@
-{
-  "filename": "tsconfig.json",
-  "defaultPath": "src",
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {
-    "typescript": "^3.2.2"
-  }
-}
