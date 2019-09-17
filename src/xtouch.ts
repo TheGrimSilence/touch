@@ -1,5 +1,5 @@
 import { ICommandManager } from 'ICommandManager';
-import { CommandManager } from './CommandManager';
+import { CommandManager } from 'CommandManager';
 
 console.log('Hello, xTouch!');
 
