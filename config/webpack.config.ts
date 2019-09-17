@@ -12,6 +12,7 @@ const config: Configuration = {
   },
   resolve: {
     extensions: ['.ts', '.ts', '.json'],
+    modules: [path.resolve(__dirname, '..', 'src'), 'node_modules'],
   },
   module: {
     rules: [
