@@ -1,5 +1,5 @@
 import { ICommandManager } from 'ICommandManager';
-import { CommandManager } from 'CommandManager';
+import { XTouchCommandManager } from 'XTouchCommandManager';
 
 console.log('Hello, xTouch!');
 
@@ -16,8 +16,8 @@ export class XTouch {
     return this.commandManager;
   }
 
-  public createCommandManager(): CommandManager {
-    return new CommandManager(this);
+  public createCommandManager(): XTouchCommandManager {
+    return new XTouchCommandManager(this);
   }
 }
 

@@ -3,7 +3,7 @@ import { CommandEcho } from 'CommandEcho';
 import { CommandHelp } from 'CommandHelp';
 import { XTouch } from 'xtouch';
 
-export class CommandManager extends CommandHandler {
+export class XTouchCommandManager extends CommandHandler {
   private readonly xTouch: XTouch;
   public constructor(xTouch: XTouch) {
     super();
