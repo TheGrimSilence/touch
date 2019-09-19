@@ -1,24 +1,25 @@
 import { Configuration } from 'webpack';
 import * as path from 'path';
-import { outDir } from '../config/paths';
+import { outDir, appSrc, appNodeModules } from '../config/paths';
 
 const config: Configuration = {
-  entry: path.resolve(__dirname, '..', 'src', 'xtouch.ts'),
+  entry: path.resolve(appSrc, 'xtouch.ts'),
   mode: 'production',
-  target: 'async-node',
+  target: 'node',
   output: {
     path: outDir,
     filename: 'xtouch.js',
   },
   resolve: {
     extensions: ['.ts', '.ts', '.json'],
-    modules: [path.resolve(__dirname, '..', 'src'), 'node_modules'],
+    modules: ['node_modules', appNodeModules].concat(appSrc || []),
   },
   module: {
     rules: [
       {
         test: /.ts/,
         loader: 'awesome-typescript-loader',
+        exclude: /node_modules/,
       },
     ],
   },

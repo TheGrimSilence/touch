@@ -1,7 +1,8 @@
 import { ICommandManager } from 'ICommandManager';
 import { XTouchCommandManager } from 'XTouchCommandManager';
+import Chalk from 'chalk';
 
-console.log('Hello, xTouch!');
+console.log(Chalk`{cyan Hello}, xTouch!`);
 
 export class XTouch {
   public readonly commandManager: ICommandManager;

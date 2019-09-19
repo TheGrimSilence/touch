@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "esnext",
+    "target": "es6",
     "noUnusedLocals": true,
     "removeComments": true,
     "baseUrl": "src",
