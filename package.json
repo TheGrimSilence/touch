@@ -1,21 +1,21 @@
 {
-  "name": "@xploration-tech/xtouch",
-  "version": "3.0.0",
+  "name": "@xploration/touch",
+  "version": "1.0.0",
   "description": "The easiest way to create empty files and folder trees at a glance!",
-  "repository": "https://github.com/XplorationByAdrian/xtouch.git",
+  "repository": "https://github.com/XplorationByAdrian/touch.git",
   "author": "Adrian (Grim) Roach <silencegrim@gmail.com>",
   "license": "MIT",
-  "company": "Xploration Technologies",
+  "company": "Xploration by Adrian",
   "preferGlobal": true,
   "scripts": {
     "build": "yarn clean && webpack --config config/webpack.config.ts",
     "clean": "rimraf lib",
-    "start": "node_modules/.bin/ts-node src/xtouch.ts",
+    "start": "node_modules/.bin/ts-node src/touch.ts",
     "prepublishOnly": "yarn build && auto-changelog -p && git add CHANGELOG.md"
   },
-  "main": "./lib/xtouch.js",
+  "main": "./lib/touch.js",
   "bin": {
-    "xtouch": "./bin/xtouch.js"
+    "touch": "./bin/touch.js"
   },
   "devDependencies": {
     "@types/webpack": "^4.39.1",

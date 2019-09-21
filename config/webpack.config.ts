@@ -3,12 +3,12 @@ import * as path from 'path';
 import { outDir, appSrc, appNodeModules } from '../config/paths';
 
 const config: Configuration = {
-  entry: path.resolve(appSrc, 'xtouch.ts'),
+  entry: path.resolve(appSrc, 'touch.ts'),
   mode: 'production',
   target: 'async-node',
   output: {
     path: outDir,
-    filename: 'xtouch.js',
+    filename: 'touch.js',
   },
   resolve: {
     extensions: ['.js', '.ts', '.json'],
