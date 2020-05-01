@@ -27,6 +27,7 @@
     "webpack-cli": "^3.3.8"
   },
   "dependencies": {
-    "chalk": "^2.4.2"
+    "chalk": "^2.4.2",
+    "strategos": "^1.0.1"
   }
 }
